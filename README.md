@@ -1,4 +1,4 @@
-\# Azure Cloud-First Office Architecture
+# Azure Cloud-First Office Architecture
 
 
 
@@ -10,11 +10,11 @@ The goal of this project is to demonstrate a realistic and pragmatic modern work
 
 
 
-\---
+---
 
 
 
-\## Scenario
+## Scenario
 
 
 
@@ -22,55 +22,55 @@ Target organization profile:
 
 
 
-\- 1 main office
+- 1 main office
 
-\- 50–250 users
+- 50–250 users
 
-\- Windows laptops and desktops
+- Windows laptops and desktops
 
-\- Microsoft 365 for productivity and collaboration
+- Microsoft 365 for productivity and collaboration
 
-\- Cloud-based identity and endpoint management
+- Cloud-based identity and endpoint management
 
-\- Local business applications for payroll and accounting
+- Local business applications for payroll and accounting
+  
+- Local GIS / urbanism workloads with large files
 
-\- Local GIS / urbanism workloads with large files
+- No site-to-site VPN to Azure
 
-\- No site-to-site VPN to Azure
-
-\- Focus on simplicity, security and operational realism
-
-
-
-\---
+- Focus on simplicity, security and operational realism
 
 
 
-\## Objectives
+---
 
 
 
-\- Use \*\*Microsoft Entra ID\*\* as the primary identity platform
-
-\- Use \*\*Microsoft Intune\*\* for endpoint management
-
-\- Use \*\*Microsoft 365\*\* for collaboration and productivity
-
-\- Avoid unnecessary infrastructure in Azure when not required
-
-\- Retain selected on-premises services for legacy or performance-sensitive workloads
-
-\- Apply a modern security baseline with MFA, Conditional Access and device compliance
-
-\- Provide a scalable architecture suitable for a small or mid-sized organization
+## Objectives
 
 
 
-\---
+- Use \*\*Microsoft Entra ID\*\* as the primary identity platform
+
+- Use \*\*Microsoft Intune\*\* for endpoint management
+
+- Use \*\*Microsoft 365\*\* for collaboration and productivity
+
+- Avoid unnecessary infrastructure in Azure when not required
+
+- Retain selected on-premises services for legacy or performance-sensitive workloads
+
+- Apply a modern security baseline with MFA, Conditional Access and device compliance
+
+- Provide a scalable architecture suitable for a small or mid-sized organization
 
 
 
-\## High-Level Architecture
+---
+
+
+
+## High-Level Architecture
 
 
 
@@ -78,59 +78,59 @@ Target organization profile:
 
 
 
-\---
+---
 
 
 
-\## Core Design Decisions
+## Core Design Decisions
 
 
 
-\### 1. Cloud-first, not cloud-only
+### 1. Cloud-first, not cloud-only
 
 The architecture moves identity, endpoint management and productivity workloads to cloud services, but keeps selected local services on-premises when there is a valid technical or business reason.
 
 
 
-\### 2. No office-to-Azure VPN
+### 2. No office-to-Azure VPN
 
 A site-to-site VPN to Azure is intentionally excluded because the solution does not depend on private Azure-hosted workloads. Microsoft 365, Entra ID and Intune are consumed securely over the internet.
 
 
 
-\### 3. Entra ID joined devices
+### 3. Entra ID joined devices
 
 Workstations are designed to be \*\*Entra ID joined\*\* and managed through \*\*Intune\*\*, replacing traditional domain join + GPO approaches for endpoint management.
 
 
 
-\### 4. Local line-of-business applications remain on-premises
+### 4. Local line-of-business applications remain on-premises
 
 Payroll and accounting systems may remain on a local application server where software compatibility, licensing or operational requirements make cloud migration unnecessary or impractical.
 
 
 
-\### 5. GIS workloads stay local
+### 5. GIS workloads stay local
 
 Large GIS, CAD and urbanism files are assumed to be performance-sensitive and better suited to local storage over LAN rather than SharePoint or OneDrive synchronization.
 
 
 
-\---
+---
 
 
 
-\## Solution Components
+## Solution Components
 
 
 
-\### Cloud Services
+### Cloud Services
 
-\- Microsoft Entra ID
+- Microsoft Entra ID
 
-\- Microsoft Intune
+- Microsoft Intune
 
-\- Microsoft 365
+- Microsoft 365
 
 &#x20; - Exchange Online
 
@@ -142,45 +142,45 @@ Large GIS, CAD and urbanism files are assumed to be performance-sensitive and be
 
 
 
-\### Security Controls
+### Security Controls
 
-\- Multi-Factor Authentication (MFA)
+- Multi-Factor Authentication (MFA)
 
-\- Conditional Access
+- Conditional Access
 
-\- Device compliance policies
+- Device compliance policies
 
-\- BitLocker
+- BitLocker
 
-\- Microsoft Defender (where licensing permits)
+- Microsoft Defender (where licensing permits)
 
-\- Administrative role separation
-
-
-
-\### On-Premises Components
-
-\- Office firewall/router
-
-\- Managed switches
-
-\- Corporate Wi-Fi
-
-\- Local application server
-
-\- Local file server or NAS for GIS/urbanism workloads
-
-\- Network printers / scanners
-
-\- Optional lightweight AD for legacy ACL/file share scenarios
+- Administrative role separation
 
 
 
-\---
+### On-Premises Components
+
+- Office firewall/router
+
+- Managed switches
+
+- Corporate Wi-Fi
+
+- Local application server
+
+- Local file server or NAS for GIS/urbanism workloads
+
+- Network printers / scanners
+
+- Optional lightweight AD for legacy ACL/file share scenarios
 
 
 
-\## Network Design Summary
+---
+
+
+
+## Network Design Summary
 
 
 
@@ -192,15 +192,15 @@ Example VLAN layout:
 
 
 
-\- \*\*VLAN 10 – User Devices\*\*
+- \*\*VLAN 10 – User Devices\*\*
 
-\- \*\*VLAN 20 – Servers\*\*
+- \*\*VLAN 20 – Servers\*\*
 
-\- \*\*VLAN 30 – Printers / IoT\*\*
+- \*\*VLAN 30 – Printers / IoT\*\*
 
-\- \*\*VLAN 40 – Guest Wi-Fi\*\*
+- \*\*VLAN 40 – Guest Wi-Fi\*\*
 
-\- \*\*VLAN 50 – Management (optional)\*\*
+- \*\*VLAN 50 – Management (optional)\*\*
 
 
 
@@ -208,49 +208,49 @@ See: \[Network Design](docs/network-design.md)
 
 
 
-\---
+---
 
 
 
-\## Identity and Device Management
+## Identity and Device Management
 
 
 
-\### Identity
+### Identity
 
 Users are created in \*\*Microsoft Entra ID\*\* as cloud-managed identities.
 
 
 
-\### Devices
+### Devices
 
 Endpoints are:
 
-\- Entra ID joined
+- Entra ID joined
 
-\- Enrolled into Intune
+- Enrolled into Intune
 
-\- Configured through compliance and configuration policies
+- Configured through compliance and configuration policies
 
-\- Provisioned through Autopilot where possible
+- Provisioned through Autopilot where possible
 
 
 
-\### Typical Device Baseline
+### Typical Device Baseline
 
-\- BitLocker enabled
+- BitLocker enabled
 
-\- Microsoft Defender enabled
+- Microsoft Defender enabled
 
-\- Firewall enabled
+- Firewall enabled
 
-\- Update rings configured
+- Update rings configured
 
-\- Office apps deployed
+- Office apps deployed
 
-\- Teams deployed
+- Teams deployed
 
-\- OneDrive configured
+- OneDrive configured
 
 
 
@@ -258,11 +258,11 @@ See: \[Identity and Device Management](docs/identity-and-device-management.md)
 
 
 
-\---
+---
 
 
 
-\## Security Baseline
+## Security Baseline
 
 
 
@@ -270,19 +270,19 @@ This design assumes the following minimum controls:
 
 
 
-\- MFA for all users
+- MFA for all users
 
-\- Conditional Access to require MFA
+- Conditional Access to require MFA
 
-\- Blocking of legacy authentication
+- Blocking of legacy authentication
 
-\- Compliant device requirement for sensitive applications
+- Compliant device requirement for sensitive applications
 
-\- Separate administrative accounts for privileged tasks
+- Separate administrative accounts for privileged tasks
 
-\- Restricted access from guest networks to internal resources
+- Restricted access from guest networks to internal resources
 
-\- Network segmentation between users, servers and printers
+- Network segmentation between users, servers and printers
 
 
 
@@ -290,11 +290,11 @@ See: \[Security Baseline](docs/security-baseline.md)
 
 
 
-\---
+---
 
 
 
-\## On-Premises Services
+## On-Premises Services
 
 
 
@@ -302,25 +302,25 @@ The following workloads are intentionally retained on-premises:
 
 
 
-\### Payroll and Accounting
+### Payroll and Accounting
 
-\- Local business application server
+- Local business application server
 
-\- Local database if required
+- Local database if required
 
-\- Restricted access from authorized users only
+- Restricted access from authorized users only
 
 
 
-\### GIS / Urbanism Data
+### GIS / Urbanism Data
 
-\- File server or NAS
+- File server or NAS
 
-\- LAN-based access for better performance
+- LAN-based access for better performance
 
-\- Suitable for large files and frequent edits
+- Suitable for large files and frequent edits
 
-\- Better aligned with engineering/GIS workflows than cloud sync
+- Better aligned with engineering/GIS workflows than cloud sync
 
 
 
@@ -328,11 +328,11 @@ See: \[On-Prem Services](docs/onprem-services.md)
 
 
 
-\---
+---
 
 
 
-\## Why This Architecture Is Realistic
+## Why This Architecture Is Realistic
 
 
 
@@ -342,23 +342,23 @@ This project is designed around the practical reality that many organizations ar
 
 This is especially relevant for:
 
-\- line-of-business applications
+- line-of-business applications
 
-\- accounting software
+- accounting software
 
-\- payroll systems
+- payroll systems
 
-\- GIS/CAD-heavy departments
+- GIS/CAD-heavy departments
 
-\- organizations with one or more physical office locations
-
-
-
-\---
+- organizations with one or more physical office locations
 
 
 
-\## Documentation
+---
+
+
+
+## Documentation
 
 
 
@@ -366,25 +366,25 @@ Detailed design notes are available in the `docs` folder:
 
 
 
-\- \[Architecture Overview](docs/architecture-overview.md)
+- \[Architecture Overview](docs/architecture-overview.md)
 
-\- \[Network Design](docs/network-design.md)
+- \[Network Design](docs/network-design.md)
 
-\- \[Identity and Device Management](docs/identity-and-device-management.md)
+- \[Identity and Device Management](docs/identity-and-device-management.md)
 
-\- \[Security Baseline](docs/security-baseline.md)
+- \[Security Baseline](docs/security-baseline.md)
 
-\- \[On-Prem Services](docs/onprem-services.md)
+- \[On-Prem Services](docs/onprem-services.md)
 
-\- \[Migration Considerations](docs/migration-considerations.md)
-
-
-
-\---
+- \[Migration Considerations](docs/migration-considerations.md)
 
 
 
-\## Sample Files
+---
+
+
+
+## Sample Files
 
 
 
@@ -392,11 +392,11 @@ This repository also includes example supporting content:
 
 
 
-\- sample Intune-related PowerShell script
+- sample Intune-related PowerShell script
 
-\- onboarding notes
+- onboarding notes
 
-\- design decision notes
+- design decision notes
 
 
 
@@ -404,11 +404,11 @@ See: \[samples](samples/)
 
 
 
-\---
+---
 
 
 
-\## Future Enhancements
+## Future Enhancements
 
 
 
@@ -416,51 +416,51 @@ Possible future improvements include:
 
 
 
-\- Universal Print integration
+- Universal Print integration
 
-\- Defender for Endpoint integration
+- Defender for Endpoint integration
 
-\- phased hybrid identity model for legacy environments
+- phased hybrid identity model for legacy environments
 
-\- backup and archive strategy enhancements
+- backup and archive strategy enhancements
 
-\- Azure-hosted DR options for selected workloads
+- Azure-hosted DR options for selected workloads
 
-\- additional architectural diagrams
-
-
-
-\---
+- additional architectural diagrams
 
 
 
-\## Key Skills Demonstrated
+---
 
 
 
-\- Cloud-first architecture design
-
-\- Microsoft Entra ID design thinking
-
-\- Intune endpoint management strategy
-
-\- Microsoft 365 integration
-
-\- Security baseline design
-
-\- Network segmentation
-
-\- Hybrid decision-making and trade-off analysis
-
-\- Pragmatic modernization planning
+## Key Skills Demonstrated
 
 
 
-\---
+- Cloud-first architecture design
+
+- Microsoft Entra ID design thinking
+
+- Intune endpoint management strategy
+
+- Microsoft 365 integration
+
+- Security baseline design
+
+- Network segmentation
+
+- Hybrid decision-making and trade-off analysis
+
+- Pragmatic modernization planning
 
 
 
-\## Related Projects
+---
+
+
+
+## Related Projects
 
 
 
@@ -468,21 +468,21 @@ You may also be interested in these related repositories:
 
 
 
-\- Azure Authentication Patterns
+- Azure Authentication Patterns
 
-\- Azure Terraform Foundation
+- Azure Terraform Foundation
 
-\- Azure VM Toolkit
+- Azure VM Toolkit
 
-\- Azure Functions Lead Processing Demo
-
-
-
-\---
+- Azure Functions Lead Processing Demo
 
 
 
-\## Author
+---
+
+
+
+## Author
 
 
 
