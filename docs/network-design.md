@@ -1,8 +1,8 @@
-\# Network Design
+# Network Design
 
 
 
-\## 1. Overview
+## 1. Overview
 
 
 
@@ -14,21 +14,21 @@ The design focuses on:
 
 
 
-\- simplicity
+- simplicity
 
-\- security
+- security
 
-\- segmentation
+- segmentation
 
-\- controlled access to local resources
-
-
-
-\---
+- controlled access to local resources
 
 
 
-\## 2. Network Components
+---
+
+
+
+## 2. Network Components
 
 
 
@@ -36,25 +36,25 @@ Typical office infrastructure includes:
 
 
 
-\- Firewall / router
+- Firewall / router
 
-\- Managed switches
+- Managed switches
 
-\- Corporate Wi-Fi
+- Corporate Wi-Fi
 
-\- Guest Wi-Fi
+- Guest Wi-Fi
 
-\- Local servers
+- Local servers
 
-\- Printers and scanners
-
-
-
-\---
+- Printers and scanners
 
 
 
-\## 3. VLAN Segmentation
+---
+
+
+
+## 3. VLAN Segmentation
 
 
 
@@ -62,99 +62,99 @@ The network is divided into logical segments:
 
 
 
-\### VLAN 10 – User Devices
+### VLAN 10 – User Devices
 
-\- Workstations and laptops
+- Workstations and laptops
 
-\- Entra ID joined devices
+- Entra ID joined devices
 
-\- Managed by Intune
-
-
-
-\### VLAN 20 – Servers
-
-\- Application server (payroll, accounting)
-
-\- File server or NAS (GIS, storage)
-
-\- Optional domain controller (if used)
+- Managed by Intune
 
 
 
-\### VLAN 30 – Printers / IoT
+### VLAN 20 – Servers
 
-\- Network printers
+- Application server (payroll, accounting)
 
-\- Scanners
+- File server or NAS (GIS, storage)
 
-\- Multi-function devices
-
-
-
-\### VLAN 40 – Guest Wi-Fi
-
-\- External users
-
-\- Internet-only access
+- Optional domain controller (if used)
 
 
 
-\### VLAN 50 – Management (optional)
+### VLAN 30 – Printers / IoT
 
-\- Network devices
+- Network printers
 
-\- Admin access interfaces
+- Scanners
 
-
-
-\---
+- Multi-function devices
 
 
 
-\## 4. Access Control Principles
+### VLAN 40 – Guest Wi-Fi
+
+- External users
+
+- Internet-only access
 
 
 
-\### Default posture
+### VLAN 50 – Management (optional)
 
-\- Deny by default
+- Network devices
 
-\- Allow only required traffic
-
-
-
-\### Typical allowed flows
+- Admin access interfaces
 
 
 
-\- Users → Internet → allowed
-
-\- Users → Servers → restricted to required ports
-
-\- IT/Admin → Servers → broader access
-
-\- Printers → Users → limited
+---
 
 
 
-\### Blocked flows
+## 4. Access Control Principles
 
 
 
-\- Guest → Internal network → blocked
+### Default posture
 
-\- Printers → Servers → blocked (unless required)
+- Deny by default
 
-\- Lateral movement between segments → minimized
-
-
-
-\---
+- Allow only required traffic
 
 
 
-\## 5. Firewall Strategy
+### Typical allowed flows
+
+
+
+- Users → Internet → allowed
+
+- Users → Servers → restricted to required ports
+
+- IT/Admin → Servers → broader access
+
+- Printers → Users → limited
+
+
+
+### Blocked flows
+
+
+
+- Guest → Internal network → blocked
+
+- Printers → Servers → blocked (unless required)
+
+- Lateral movement between segments → minimized
+
+
+
+---
+
+
+
+## 5. Firewall Strategy
 
 
 
@@ -162,13 +162,13 @@ The firewall enforces:
 
 
 
-\- VLAN isolation
+- VLAN isolation
 
-\- outbound internet access control
+- outbound internet access control
 
-\- inbound restrictions
+- inbound restrictions
 
-\- logging and monitoring
+- logging and monitoring
 
 
 
@@ -176,21 +176,21 @@ Recommended features:
 
 
 
-\- IDS/IPS
+- IDS/IPS
 
-\- application filtering
+- application filtering
 
-\- geo-blocking (optional)
+- geo-blocking (optional)
 
-\- VPN support (for remote users, not Azure)
-
-
-
-\---
+- VPN support (for remote users, not Azure)
 
 
 
-\## 6. Server Access Model
+---
+
+
+
+## 6. Server Access Model
 
 
 
@@ -198,11 +198,11 @@ Access to local servers should be:
 
 
 
-\- restricted to authorized users or groups
+- restricted to authorized users or groups
 
-\- limited to required protocols (SMB, RDP, application ports)
+- limited to required protocols (SMB, RDP, application ports)
 
-\- logged and monitored
+ logged and monitored
 
 
 
@@ -210,17 +210,17 @@ Where possible:
 
 
 
-\- avoid exposing servers to the internet
+- avoid exposing servers to the internet
 
-\- require internal network presence or controlled remote access
-
-
-
-\---
+- require internal network presence or controlled remote access
 
 
 
-\## 7. Printer and IoT Isolation
+---
+
+
+
+## 7. Printer and IoT Isolation
 
 
 
@@ -228,11 +228,11 @@ Printers and IoT devices are placed in a separate VLAN to:
 
 
 
-\- reduce attack surface
+- reduce attack surface
 
-\- prevent lateral movement
+- prevent lateral movement
 
-\- isolate less secure devices
+- isolate less secure devices
 
 
 
@@ -240,17 +240,17 @@ Access is typically:
 
 
 
-\- Users → Printers → allowed
+- Users → Printers → allowed
 
-\- Printers → Users/Servers → restricted
-
-
-
-\---
+- Printers → Users/Servers → restricted
 
 
 
-\## 8. Wi-Fi Design
+---
+
+
+
+## 8. Wi-Fi Design
 
 
 
@@ -258,47 +258,47 @@ Two main networks:
 
 
 
-\### Corporate Wi-Fi
+### Corporate Wi-Fi
 
-\- authenticated users
+- authenticated users
 
-\- access to internal resources
+- access to internal resources
 
-\- mapped to user VLAN
-
-
-
-\### Guest Wi-Fi
-
-\- internet-only
-
-\- isolated from internal network
-
-\- separate VLAN
+- mapped to user VLAN
 
 
 
-\---
+### Guest Wi-Fi
+
+- internet-only
+
+- isolated from internal network
+
+- separate VLAN
 
 
 
-\## 9. Internet Access Model
+---
 
 
 
-\- All devices access cloud services directly over the internet
-
-\- No forced tunneling to Azure
-
-\- Microsoft 365, Entra ID and Intune are accessed securely using HTTPS
+## 9. Internet Access Model
 
 
 
-\---
+- All devices access cloud services directly over the internet
+
+- No forced tunneling to Azure
+
+- Microsoft 365, Entra ID and Intune are accessed securely using HTTPS
 
 
 
-\## 10. Remote Access Considerations
+---
+
+
+
+## 10. Remote Access Considerations
 
 
 
@@ -306,11 +306,11 @@ If remote access is required:
 
 
 
-\- VPN to office (not Azure)
+- VPN to office (not Azure)
 
-\- or Remote Desktop Gateway
+- or Remote Desktop Gateway
 
-\- or application-specific remote access
+- or application-specific remote access
 
 
 
@@ -318,35 +318,35 @@ Access should be:
 
 
 
-\- authenticated
+- authenticated
 
-\- logged
+- logged
 
-\- restricted
-
-
-
-\---
+- restricted
 
 
 
-\## 11. Backup and Resilience
+---
 
 
 
-\- Local backups stored on NAS or backup server
-
-\- Optional offsite or cloud backup
-
-\- Regular testing of restore procedures
+## 11. Backup and Resilience
 
 
 
-\---
+- Local backups stored on NAS or backup server
+
+- Optional offsite or cloud backup
+
+- Regular testing of restore procedures
 
 
 
-\## 12. Monitoring
+---
+
+
+
+## 12. Monitoring
 
 
 
@@ -354,21 +354,21 @@ Recommended:
 
 
 
-\- firewall logs
+- firewall logs
 
-\- server logs
+- server logs
 
-\- endpoint security alerts
+- endpoint security alerts
 
-\- basic network monitoring
-
-
-
-\---
+- basic network monitoring
 
 
 
-\## 13. Summary
+---
+
+
+
+## 13. Summary
 
 
 
@@ -376,13 +376,13 @@ This network design provides:
 
 
 
-\- strong segmentation
+- strong segmentation
 
-\- controlled access
+- controlled access
 
-\- compatibility with cloud-first services
+- compatibility with cloud-first services
 
-\- support for local workloads
+- support for local workloads
 
 
 
