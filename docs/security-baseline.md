@@ -1,8 +1,8 @@
-\# Security Baseline
+# Security Baseline
 
 
 
-\## 1. Overview
+## 1. Overview
 
 
 
@@ -14,49 +14,49 @@ The goal is to implement a strong, practical security posture suitable for a 50â
 
 
 
-\---
+---
 
 
 
-\## 2. Security Principles
+## 2. Security Principles
 
 
 
-\- Identity is the primary security boundary
+- Identity is the primary security boundary
 
-\- Assume breach mindset (Zero Trust principles)
+- Assume breach mindset (Zero Trust principles)
 
-\- Least privilege access
+- Least privilege access
 
-\- Device trust and compliance
+- Device trust and compliance
 
-\- Network segmentation
+- Network segmentation
 
-\- Minimize attack surface
+- Minimize attack surface
 
-\- Monitor and respond
-
-
-
-\---
+- Monitor and respond
 
 
 
-\## 3. Identity Security
+---
 
 
 
-\### Multi-Factor Authentication (MFA)
-
-\- Required for all users
-
-\- Enforced via Conditional Access
-
-\- Prefer authenticator apps over SMS
+## 3. Identity Security
 
 
 
-\### Conditional Access Policies
+### Multi-Factor Authentication (MFA)
+
+- Required for all users
+
+- Enforced via Conditional Access
+
+- Prefer authenticator apps over SMS
+
+
+
+### Conditional Access Policies
 
 
 
@@ -76,157 +76,157 @@ Minimum recommended policies:
 
 
 
-\---
+---
 
 
 
-\## 4. Privileged Access
+## 4. Privileged Access
 
 
 
-\- Separate admin accounts from user accounts
+- Separate admin accounts from user accounts
 
-\- No daily use of privileged accounts
+- No daily use of privileged accounts
 
-\- Limit number of global admins
+- Limit number of global admins
 
-\- Use role-based access control (RBAC)
+- Use role-based access control (RBAC)
 
-\- Consider Just-In-Time access (PIM) where available
-
-
-
-\---
+- Consider Just-In-Time access (PIM) where available
 
 
 
-\## 5. Device Security (Intune)
+---
 
 
 
-\### Compliance Policies
+## 5. Device Security (Intune)
+
+
+
+### Compliance Policies
 
 Devices must meet:
 
 
 
-\- BitLocker enabled
+- BitLocker enabled
 
-\- Firewall enabled
+- Firewall enabled
 
-\- Antivirus enabled
+- Antivirus enabled
 
-\- OS version compliant
+- OS version compliant
 
-\- No jailbreak/root
-
-
-
-\### Configuration Profiles
-
-\- Disable insecure settings
-
-\- Enforce password/PIN policies
-
-\- Configure screen lock timeout
-
-\- Restrict removable media (optional)
+- No jailbreak/root
 
 
 
-\---
+### Configuration Profiles
+
+- Disable insecure settings
+
+- Enforce password/PIN policies
+
+- Configure screen lock timeout
+
+- Restrict removable media (optional)
 
 
 
-\## 6. Endpoint Protection
+---
 
 
 
-\- Microsoft Defender enabled
-
-\- Real-time protection active
-
-\- Cloud protection enabled
-
-\- Regular updates
-
-\- Attack surface reduction rules (if applicable)
+## 6. Endpoint Protection
 
 
 
-\---
+- Microsoft Defender enabled
+
+- Real-time protection active
+
+- Cloud protection enabled
+
+- Regular updates
+
+- Attack surface reduction rules (if applicable)
 
 
 
-\## 7. Data Protection
+---
 
 
 
-\### Cloud Data
-
-\- OneDrive and SharePoint with versioning
-
-\- Access controlled via Entra groups
-
-\- Sharing restrictions configured
+## 7. Data Protection
 
 
 
-\### Local Data
+### Cloud Data
 
-\- Stored on file server or NAS
+- OneDrive and SharePoint with versioning
 
-\- Access controlled via permissions
+- Access controlled via Entra groups
 
-\- Regular backups
-
-
-
-\---
+- Sharing restrictions configured
 
 
 
-\## 8. Network Security
+### Local Data
+
+- Stored on file server or NAS
+
+- Access controlled via permissions
+
+- Regular backups
 
 
 
-\- VLAN segmentation (users, servers, printers, guest)
+---
 
-\- Firewall rules:
+
+
+## 8. Network Security
+
+
+
+- VLAN segmentation (users, servers, printers, guest)
+
+ Firewall rules:
 
 &#x20; - allow only required traffic
 
 &#x20; - block unnecessary lateral movement
 
-\- Guest network isolated
+- Guest network isolated
 
-\- Printers and IoT isolated
-
-
-
-\---
+- Printers and IoT isolated
 
 
 
-\## 9. Application Security
+---
 
 
 
-\- Prefer modern authentication (OAuth, SAML)
-
-\- Avoid legacy protocols
-
-\- Limit access to business applications
-
-\- Monitor usage and access
+## 9. Application Security
 
 
 
-\---
+- Prefer modern authentication (OAuth, SAML)
+
+- Avoid legacy protocols
+
+- Limit access to business applications
+
+- Monitor usage and access
 
 
 
-\## 10. Logging and Monitoring
+---
+
+
+
+## 10. Logging and Monitoring
 
 
 
@@ -234,21 +234,21 @@ Minimum monitoring includes:
 
 
 
-\- Sign-in logs (Entra ID)
+- Sign-in logs (Entra ID)
 
-\- Audit logs
+- Audit logs
 
-\- Endpoint alerts
+- Endpoint alerts
 
-\- Firewall logs
+- Firewall logs
 
 
 
 Optional enhancements:
 
-\- Centralized logging
+- Centralized logging
 
-\- SIEM integration (e.g., Microsoft Sentinel)
+- SIEM integration (e.g., Microsoft Sentinel)
 
 
 
@@ -256,45 +256,45 @@ Optional enhancements:
 
 
 
-\## 11. Backup and Recovery
+## 11. Backup and Recovery
 
 
 
-\- Regular backups for:
+- Regular backups for:
 
 &#x20; - file server
 
 &#x20; - application server
 
-\- Test restore procedures
+- Test restore procedures
 
-\- Optional cloud backup
-
-
-
-\---
+- Optional cloud backup
 
 
 
-\## 12. Remote Access Security
+---
 
 
 
-\- Secure VPN (to office, if used)
-
-\- MFA required
-
-\- Restricted access
-
-\- Logging enabled
+## 12. Remote Access Security
 
 
 
-\---
+- Secure VPN (to office, if used)
+
+- MFA required
+
+- Restricted access
+
+- Logging enabled
 
 
 
-\## 13. Security Risks
+---
+
+
+
+## 13. Security Risks
 
 
 
@@ -302,23 +302,23 @@ Common risks:
 
 
 
-\- weak passwords or MFA bypass
+- weak passwords or MFA bypass
 
-\- unmanaged devices
+- unmanaged devices
 
-\- legacy authentication
+- legacy authentication
 
-\- flat networks
+- flat networks
 
-\- overprivileged users
-
-
-
-\---
+- overprivileged users
 
 
 
-\## 14. Summary
+---
+
+
+
+## 14. Summary
 
 
 
@@ -326,13 +326,13 @@ This baseline provides:
 
 
 
-\- strong identity protection
+- strong identity protection
 
-\- secure device posture
+- secure device posture
 
-\- controlled network access
+- controlled network access
 
-\- practical and scalable security
+- practical and scalable security
 
 
 
