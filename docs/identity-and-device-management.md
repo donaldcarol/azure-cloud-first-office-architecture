@@ -1,8 +1,8 @@
-\# Identity and Device Management
+# Identity and Device Management
 
 
 
-\## 1. Overview
+## 1. Overview
 
 
 
@@ -14,11 +14,11 @@ The goal is to replace traditional Active Directory and Group Policy with a mode
 
 
 
-\---
+---
 
 
 
-\## 2. Identity Platform
+## 2. Identity Platform
 
 
 
@@ -26,35 +26,35 @@ Microsoft Entra ID is used as the primary identity provider.
 
 
 
-\### Key characteristics:
+### Key characteristics:
 
-\- Cloud-managed identities
+- Cloud-managed identities
 
-\- Central authentication point
+- Central authentication point
 
-\- Integration with Microsoft 365
+- Integration with Microsoft 365
 
-\- Supports Conditional Access and MFA
-
-
-
-\---
+- Supports Conditional Access and MFA
 
 
 
-\## 3. User Management
+---
 
 
 
-\### User creation
-
-\- Users are created directly in Entra ID
-
-\- Naming convention: firstname.lastname@company.com
+## 3. User Management
 
 
 
-\### Group structure
+### User creation
+
+- Users are created directly in Entra ID
+
+- Naming convention: firstname.lastname@company.com
+
+
+
+### Group structure
 
 
 
@@ -62,11 +62,11 @@ Groups are used for:
 
 
 
-\- application access
+- application access
 
-\- device policies
+- device policies
 
-\- department segmentation
+- department segmentation
 
 
 
@@ -74,23 +74,23 @@ Examples:
 
 
 
-\- GRP-Sales
+- GRP-Sales
 
-\- GRP-HR
+- GRP-HR
 
-\- GRP-IT
+- GRP-IT
 
-\- APP-CRM-Users
+- APP-CRM-Users
 
-\- DEV-Standard-Users
-
-
-
-\---
+- DEV-Standard-Users
 
 
 
-\## 4. Device Enrollment
+---
+
+
+
+## 4. Device Enrollment
 
 
 
@@ -98,25 +98,25 @@ All endpoints are:
 
 
 
-\- Entra ID joined
+- Entra ID joined
 
-\- Enrolled into Intune
-
-
-
-\### Enrollment methods:
-
-\- Windows Autopilot (preferred)
-
-\- Manual enrollment (fallback)
+- Enrolled into Intune
 
 
 
-\---
+### Enrollment methods:
+
+- Windows Autopilot (preferred)
+
+- Manual enrollment (fallback)
 
 
 
-\## 5. Device Provisioning (Autopilot)
+---
+
+
+
+## 5. Device Provisioning (Autopilot)
 
 
 
@@ -140,11 +140,11 @@ This enables zero-touch provisioning.
 
 
 
-\---
+---
 
 
 
-\## 6. Configuration Management
+## 6. Configuration Management
 
 
 
@@ -152,27 +152,27 @@ Intune replaces traditional GPO.
 
 
 
-\### Configuration includes:
+### Configuration includes:
 
 
 
-\- security settings
+- security settings
 
-\- device restrictions
+- device restrictions
 
-\- Wi-Fi and VPN profiles
+- Wi-Fi and VPN profiles
 
-\- browser settings
+- browser settings
 
-\- OS configurations
-
-
-
-\---
+- OS configurations
 
 
 
-\## 7. Compliance Policies
+---
+
+
+
+## 7. Compliance Policies
 
 
 
@@ -180,13 +180,13 @@ Devices must meet defined security requirements:
 
 
 
-\- encryption enabled
+- encryption enabled
 
-\- antivirus active
+- antivirus active
 
-\- firewall enabled
+- firewall enabled
 
-\- OS up to date
+- OS up to date
 
 
 
@@ -194,11 +194,11 @@ Non-compliant devices can be blocked via Conditional Access.
 
 
 
-\---
+---
 
 
 
-\## 8. Application Deployment
+## 8. Application Deployment
 
 
 
@@ -206,39 +206,39 @@ Applications are deployed through Intune:
 
 
 
-\- Microsoft 365 Apps
+- Microsoft 365 Apps
 
-\- Teams
+- Teams
 
-\- browsers
+- browsers
 
-\- business applications
+- business applications
 
-\- Win32 packaged apps
-
-
-
-\---
+- Win32 packaged apps
 
 
 
-\## 9. Update Management
+---
 
 
 
-\- Windows Update rings
-
-\- staged deployment
-
-\- automatic patching
+## 9. Update Management
 
 
 
-\---
+- Windows Update rings
+
+- staged deployment
+
+- automatic patching
 
 
 
-\## 10. Access Control
+---
+
+
+
+## 10. Access Control
 
 
 
@@ -246,21 +246,21 @@ Access to applications is controlled by:
 
 
 
-\- user identity
+- user identity
 
-\- group membership
+- group membership
 
-\- device compliance
+- device compliance
 
-\- Conditional Access policies
-
-
-
-\---
+- Conditional Access policies
 
 
 
-\## 11. Onboarding Process
+---
+
+
+
+## 11. Onboarding Process
 
 
 
@@ -276,11 +276,11 @@ Access to applications is controlled by:
 
 
 
-\---
+---
 
 
 
-\## 12. Offboarding Process
+## 12. Offboarding Process
 
 
 
@@ -296,11 +296,11 @@ Access to applications is controlled by:
 
 
 
-\---
+---
 
 
 
-\## 13. Hybrid Considerations
+## 13. Hybrid Considerations
 
 
 
@@ -308,9 +308,9 @@ If required:
 
 
 
-\- minimal on-prem AD may be retained
+- minimal on-prem AD may be retained
 
-\- used only for:
+- used only for:
 
 &#x20; - file shares
 
@@ -328,45 +328,45 @@ However, user authentication remains cloud-based.
 
 
 
-\## 14. Benefits
+## 14. Benefits
 
 
 
-\- simplified management
+- simplified management
 
-\- centralized control
+- centralized control
 
-\- improved security
+- improved security
 
-\- better remote support
+- better remote support
 
-\- reduced infrastructure dependency
-
-
-
-\---
+- reduced infrastructure dependency
 
 
 
-\## 15. Challenges
+---
 
 
 
-\- legacy application compatibility
-
-\- user training
-
-\- initial setup complexity
-
-\- dependency on cloud services
+## 15. Challenges
 
 
 
-\---
+- legacy application compatibility
+
+- user training
+
+- initial setup complexity
+
+- dependency on cloud services
 
 
 
-\## 16. Summary
+---
+
+
+
+## 16. Summary
 
 
 
