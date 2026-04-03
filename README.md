@@ -31,9 +31,9 @@ The goal of this project is to demonstrate a realistic and pragmatic modern work
 
 ## Project structure
 
-docs/  
-diagrams/  
-samples/  
+- docs/  
+- diagrams/  
+- samples/  
 
 
 ## Scenario
