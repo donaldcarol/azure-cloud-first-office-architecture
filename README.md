@@ -254,7 +254,7 @@ Endpoints are:
 
 
 
-See: \[Identity and Device Management](docs/identity-and-device-management.md)
+See: [Identity and Device Management](docs/identity-and-device-management.md)
 
 
 
@@ -286,7 +286,7 @@ This design assumes the following minimum controls:
 
 
 
-See: \[Security Baseline](docs/security-baseline.md)
+See: [Security Baseline](docs/security-baseline.md)
 
 
 
@@ -324,7 +324,7 @@ The following workloads are intentionally retained on-premises:
 
 
 
-See: \[On-Prem Services](docs/onprem-services.md)
+See: [On-Prem Services](docs/onprem-services.md)
 
 
 
@@ -366,17 +366,17 @@ Detailed design notes are available in the `docs` folder:
 
 
 
-- \[Architecture Overview](docs/architecture-overview.md)
+- [Architecture Overview](docs/architecture-overview.md)
 
-- \[Network Design](docs/network-design.md)
+- [Network Design](docs/network-design.md)
 
-- \[Identity and Device Management](docs/identity-and-device-management.md)
+- [Identity and Device Management](docs/identity-and-device-management.md)
 
-- \[Security Baseline](docs/security-baseline.md)
+- [Security Baseline](docs/security-baseline.md)
 
-- \[On-Prem Services](docs/onprem-services.md)
+- [On-Prem Services](docs/onprem-services.md)
 
-- \[Migration Considerations](docs/migration-considerations.md)
+- [Migration Considerations](docs/migration-considerations.md)
 
 
 
