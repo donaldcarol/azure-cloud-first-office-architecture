@@ -74,7 +74,7 @@ Target organization profile:
 
 
 
-!\[High-Level Architecture](diagrams/high-level-architecture.png)
+![High-Level Architecture](diagrams/high-level-architecture.png)
 
 
 
