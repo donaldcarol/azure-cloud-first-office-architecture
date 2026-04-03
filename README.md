@@ -202,6 +202,8 @@ Example VLAN layout:
 
 - \*\*VLAN 50 – Management (optional)\*\*
 
+  
+![Network](diagrams/network-segmentation.png)
 
 
 See: [Network Design](docs/network-design.md)
