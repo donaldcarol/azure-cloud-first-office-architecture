@@ -1,3 +1,12 @@
+![PowerShell](https://img.shields.io/badge/Documentation-blue)
+![Azure](https://img.shields.io/badge/Azure-Cloud-0078D4?logo=microsoftazure)
+![GitHub Actions](https://img.shields.io/badge/Azure-Architecture-black)
+![OIDC](https://img.shields.io/badge/Entra-ID-green)
+![OIDC](https://img.shields.io/badge/Intune-red)
+![OIDC](https://img.shields.io/badge/Microsoft-365-yellow)
+
+
+
 # Azure Cloud-First Office Architecture
 
 
@@ -12,6 +21,19 @@ The goal of this project is to demonstrate a realistic and pragmatic modern work
 
 ---
 
+## How to read this Repository
+
+- Read the README
+- Review the high-level diagram
+- Explore architecture and security docs
+- Check sample implementation notes
+
+
+## Project structure
+
+docs/  
+diagrams/  
+samples/  
 
 
 ## Scenario
