@@ -1,8 +1,8 @@
-\# On-Premises Services
+# On-Premises Services
 
 
 
-\## 1. Overview
+## 1. Overview
 
 
 
@@ -14,15 +14,15 @@ These services remain local due to:
 
 
 
-\- application compatibility constraints
+- application compatibility constraints
 
-\- performance requirements
+- performance requirements
 
-\- large data volumes
+- large data volumes
 
-\- operational dependencies
+- operational dependencies
 
-\- cost or licensing considerations
+- cost or licensing considerations
 
 
 
@@ -30,11 +30,11 @@ The goal is not to eliminate on-premises services entirely, but to keep only tho
 
 
 
-\---
+---
 
 
 
-\## 2. Payroll and Accounting Systems
+## 2. Payroll and Accounting Systems
 
 
 
@@ -46,37 +46,37 @@ Reasons include:
 
 
 
-\- legacy application design
+- legacy application design
 
-\- dependency on local databases
+- dependency on local databases
 
-\- vendor limitations or lack of SaaS alternatives
+- vendor limitations or lack of SaaS alternatives
 
-\- integration with local processes (printing, exports, reports)
+- integration with local processes (printing, exports, reports)
 
-\- licensing constraints
-
-
-
-\### Access Model
+- licensing constraints
 
 
 
-\- restricted to authorized users only
-
-\- accessible from the internal network
-
-\- optionally accessible via controlled remote access (VPN or RDP gateway)
-
-\- not exposed directly to the internet
+### Access Model
 
 
 
-\---
+- restricted to authorized users only
+
+- accessible from the internal network
+
+- optionally accessible via controlled remote access (VPN or RDP gateway)
+
+- not exposed directly to the internet
 
 
 
-\## 3. GIS and Urbanism Workloads
+---
+
+
+
+## 3. GIS and Urbanism Workloads
 
 
 
@@ -88,33 +88,33 @@ These workloads are kept on local storage due to:
 
 
 
-\- large file sizes
+- large file sizes
 
-\- high read/write frequency
+- high read/write frequency
 
-\- sensitivity to latency
+- sensitivity to latency
 
-\- limitations of cloud sync solutions for large engineering datasets
-
-
-
-\### Storage Model
+- limitations of cloud sync solutions for large engineering datasets
 
 
 
-\- local file server or enterprise-grade NAS
-
-\- high-performance storage (SSD/NVMe recommended)
-
-\- structured shared folders (e.g. GIS, Urbanism, Projects)
+### Storage Model
 
 
 
-\---
+- local file server or enterprise-grade NAS
+
+- high-performance storage (SSD/NVMe recommended)
+
+- structured shared folders (e.g. GIS, Urbanism, Projects)
 
 
 
-\## 4. Local File Storage
+---
+
+
+
+## 4. Local File Storage
 
 
 
@@ -122,13 +122,13 @@ While most user and collaboration data is moved to OneDrive and SharePoint, loca
 
 
 
-\- GIS/CAD data
+- GIS/CAD data
 
-\- large archives
+- large archives
 
-\- technical datasets
+- technical datasets
 
-\- application-generated files
+- application-generated files
 
 
 
@@ -136,11 +136,11 @@ Cloud storage remains the primary platform for standard business documents.
 
 
 
-\---
+---
 
 
 
-\## 5. Printing and Scanning
+## 5. Printing and Scanning
 
 
 
@@ -148,35 +148,35 @@ Printing and scanning services remain within the local office network.
 
 
 
-\### Printing
+### Printing
 
 
 
-\- network printers accessible via LAN
+- network printers accessible via LAN
 
-\- optional integration with Universal Print
+- optional integration with Universal Print
 
-\- deployment via Intune scripts or manual configuration
-
-
-
-\### Scanning
+- deployment via Intune scripts or manual configuration
 
 
 
-\- scan to email (preferred)
-
-\- scan to network folder (where required)
-
-\- optional integration with SharePoint or cloud storage
+### Scanning
 
 
 
-\---
+- scan to email (preferred)
+
+- scan to network folder (where required)
+
+- optional integration with SharePoint or cloud storage
 
 
 
-\## 6. Optional Local Directory (Minimal AD)
+---
+
+
+
+## 6. Optional Local Directory (Minimal AD)
 
 
 
@@ -184,17 +184,17 @@ Although identity is managed in Microsoft Entra ID, a minimal on-premises Active
 
 
 
-\### Use Cases
+### Use Cases
 
 
 
-\- file shares with complex permissions (ACLs)
+- file shares with complex permissions (ACLs)
 
-\- legacy applications requiring domain membership
+- legacy applications requiring domain membership
 
-\- Windows server management
+- Windows server management
 
-\- group-based access control for local resources
+- group-based access control for local resources
 
 
 
@@ -202,11 +202,11 @@ This AD instance is not the primary identity system, but a supporting component 
 
 
 
-\---
+---
 
 
 
-\## 7. Backup and Resilience
+## 7. Backup and Resilience
 
 
 
@@ -214,35 +214,35 @@ All on-premises services must be backed up regularly.
 
 
 
-\### Backup Scope
+### Backup Scope
 
 
 
-\- application server (payroll/accounting)
+- application server (payroll/accounting)
 
-\- file server or NAS (GIS and storage)
+- file server or NAS (GIS and storage)
 
-\- critical configuration data
-
-
-
-\### Strategy
+- critical configuration data
 
 
 
-\- local backups (NAS or backup server)
-
-\- periodic offsite or cloud backup (optional)
-
-\- regular restore testing
+### Strategy
 
 
 
-\---
+- local backups (NAS or backup server)
+
+- periodic offsite or cloud backup (optional)
+
+- regular restore testing
 
 
 
-\## 8. Security Considerations
+---
+
+
+
+## 8. Security Considerations
 
 
 
@@ -250,17 +250,17 @@ On-premises systems must follow strict security practices:
 
 
 
-\- servers placed in a dedicated VLAN
+- servers placed in a dedicated VLAN
 
-\- restricted access from user networks
+- restricted access from user networks
 
-\- no unnecessary internet exposure
+- no unnecessary internet exposure
 
-\- regular patching and updates
+- regular patching and updates
 
-\- endpoint protection enabled
+- endpoint protection enabled
 
-\- access logging and monitoring
+- access logging and monitoring
 
 
 
@@ -268,11 +268,11 @@ Printers and IoT devices should be isolated in separate network segments.
 
 
 
-\---
+---
 
 
 
-\## 9. Summary
+## 9. Summary
 
 
 
@@ -284,13 +284,13 @@ This hybrid approach ensures:
 
 
 
-\- optimal performance for critical workloads
+- optimal performance for critical workloads
 
-\- compatibility with legacy applications
+- compatibility with legacy applications
 
-\- reduced cloud complexity
+- reduced cloud complexity
 
-\- a balanced and pragmatic architecture
+- a balanced and pragmatic architecture
 
 
 
