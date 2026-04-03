@@ -204,7 +204,7 @@ Example VLAN layout:
 
 
 
-See: \[Network Design](docs/network-design.md)
+See: [Network Design](docs/network-design.md)
 
 
 
